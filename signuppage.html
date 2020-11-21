@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        
+        <title>StreamTV</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        
+        <style>
+            
+            body {
+                font-family: monospace;
+                color: white;
+            }
+            
+            .jumbotron {
+                height: 100vh;
+                margin-bottom: 0px;
+                background-image: url(background.jpg);
+                background-size: cover;
+         
+            }
+            
+            #main-container {
+                background-image: linear-gradient(to bottom left, rgba(0, 101, 191), rgba(0, 20, 90), rgba(0, 101, 191));
+                background-color: rgba(0, 101, 191);
+                padding: 10px;
+                border-radius: 10px;
+                display: inline-block;
+                box-shadow: -5px 5px 10px rgba(0, 81, 171, 0.5);
+                
+            }
+            
+            .form-group {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            
+            .form-check {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            
+            .form-check-label {
+                padding-top: 2px;
+            }
+            
+            a {
+                color: white;
+            }
+            
+            a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+            
+            #logo {
+                max-height: 100px;
+                margin-bottom: 10px;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+    
+        <!-- Add shadow and gradient to main-container -->
+        <div class="jumbotron">
+            <div id="main-container">
+                <img src="logo.png" id="logo">
+                <p class="lead">Watch all your favourite TV shows in an instant!</p>
+                <p id="signUpOffer">Sign up now for your free one month trial!</p>
+                <form id="signUpForm">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="nameInput" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email Address">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirm Password">
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="staySignedIn">
+                    <label class="form-check-label" for="staySignedIn">Stayed Signed In</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="submitButton">Sign Up</button>
+                </form>
+                <br><a id="toggle-login-signup" href="">Or, click here to log in</a>
+            </div>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+        <script type="text/javascript">
+        
+            $("#toggle-login-signup").click(function() {
+                if($("#toggle-login-signup").html() == "Or, click here to log in") {
+                    $("#toggle-login-signup").html("Or, click here to sign up");
+                    $("#nameInput").hide();
+                    $("#confirmPasswordInput").hide();
+                    $("#signUpOffer").hide();
+                    $("#submitButton").html("Log In");
+                } else {
+                    $("#toggle-login-signup").html("Or, click here to log in");
+                    $("#nameInput").show();
+                    $("#confirmPasswordInput").show();
+                    $("#signUpOffer").show();
+                    $("#submitButton").html("Sign Up");
+                }
+
+                return false;
+            });
+            
+        </script>
+    </body>
+    
+</html>
